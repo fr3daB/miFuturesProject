@@ -121,9 +121,13 @@ footer a:hover {
   
   /* Progress Bar */
   .progress-bar {
-    height: 1rem;
-    background-color: #333;
+    height: 1.5rem;
+    background-color: rgb(14, 241, 164);
+    border-radius: 1.6rem;
+    color: white;
+    font-size: 18px;
   }
+  
 
   .circlePercent {
     position: relative;
