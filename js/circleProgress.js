@@ -20,4 +20,7 @@ const e = (elem, start, end) => {
  
 function start() {
     e(document.getElementById('ee'), 0, 72)
+    e(document.getElementById('skill-1'), 0, 38.6)
+    e(document.getElementById('skill-2'), 0, 22.5)
+    e(document.getElementById('skill-3'), 0, 30.8)
 }
