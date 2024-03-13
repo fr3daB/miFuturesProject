@@ -1,8 +1,22 @@
+html{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+  html, body {
+    height: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    background: #f6f6f6; 
     margin: 0;
-    padding: 0;
-  }
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4rem; /* 14px */
+    line-height: 1.4;
+}
   
   header {
     background-color: #333;
@@ -26,12 +40,52 @@ body {
   header nav a {color: #fff;
     text-decoration: none;
   }
+
+  /* links */
+a {
+    color: #3c8453;
+}
+a:hover {
+    color: #bcaa96;
+    text-decoration: none;
+}
+footer a {
+    color: #bcaa96;
+}
+footer a:hover {
+    color: #3c8453;
+}
+
+  /* HOME
+------------------------------------*/
+.home {
+    background: url(../images/bg-home-office-studio.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.home .content-wrapper {
+    flex: 1 0 auto;
+}
+
+.content-bg {
+    background: rgb(255 255 255 / 0.9);
+    padding: 30px;
+}
+@media screen and (max-width: 650px) {
+    .home .content-wrapper {
+        padding: 10px;
+    }
+    .content-bg {
+        padding: 20px;
+    }
+}
   
   main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
   
   main section {
@@ -116,10 +170,43 @@ body {
   text-align: right;
 }
   
-  footer {
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-  }
+
+/* FOOTER
+------------------------------------*/
+footer {
+    background: #222;
+    color: #d3d4d6;
+}
+footer p{
+    padding: 0 10px;
+}
+.socials {
+    list-style-type: none;
+    padding: 0;
+}
+.socials li {
+    display: inline-block;
+    margin-left: 10px;
+}
+.socials img {
+    width: 32px;
+}
+.socials img:hover {
+    /* filter: brightness(0.8); */
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 860px) {
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+}
+/* only show center align for screen size < 500px */
+@media screen and (max-width: 500px) {
+    footer {
+        text-align: center;
+        padding: 10px;
+    }  
+}
