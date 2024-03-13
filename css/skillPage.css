@@ -1,26 +1,271 @@
-.circle-bar {
-    position: relative;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+img {
+    width: 40px;
+    height: 40px;
+    z-index: 300;
+    object-fit: contain;
+    position: absolute;
+    left: 27%;
+    top: 27%;
   }
-  
-  .circle-bar .bar {
+
+h5 {
+    position: absolute;
+}
+
+header {
+    margin: auto;
+    text-align: center;
+    font-size: 7vh;
+}
+
+#levels {
+    margin: auto auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#circle-container {
+    margin: auto auto;
+    width: 50%;
+    position: relative;
+    left: 25%;
+    padding: 10px;
+    display: inline-flex;
+    margin-top: 25px;
+}
+
+body {
+	padding: 30px 0px;
+}
+
+#progressdata {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    clip: rect(0, 160px, 160px, 80px);
-    background-color: #4caf50;
+    margin-top: 5%;
+    top: 0;
+    left: 0;
+}
+
+.navbar-why-you-so-small > .navbar-collapse {
+	background-color: rgba(51, 51, 51, 0.8);
+}
+
+body {
+	padding: 30px 0px;
+}
+
+.navbar-why-you-so-small > .navbar-collapse {
+	background-color: rgba(51, 51, 51, 0.8);
+}
+
+.progress-bar {
+	text-align: left;
+	white-space: nowrap;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	cursor: pointer;
+}
+
+.progress-bar > .progress-type {
+	padding-left: 10px;
+}
+
+.progress-meter {
+	min-height: 15px;
+	border-bottom: 2px solid rgb(160, 160, 160);
+}
+
+.progress-meter > .meter {
+	position: relative;
+	float: left;
+	min-height: 15px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: rgb(160, 160, 160);
+}
+
+.line-straight {
+    position: absolute;
+    top: 80%;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 80px;
+    background-color: black;
+    z-index: -1;
   }
-  
-  .circle-bar .circle-text {
+
+  .line-diag-l {
+    position: absolute;
+    top: 75%;
+    left: calc(37.5% - 1px);
+    width: 2px;
+    height: 100px;
+    background-color: black;
+    transform: rotateY(0deg) rotate(35deg);
+    z-index: -1;
+  }
+
+  .line-diag-r {
+    position: absolute;
+    top: 75%;
+    left: calc(62.5% + 1px);
+    width: 2px;
+    height: 100px;
+    background-color: black;
+    transform: rotateY(0deg) rotate(-35deg);
+    z-index: -1;
+  }
+
+.progress-meter > .meter-left {
+	border-left-width: 2px;
+}
+
+.progress-meter > .meter-right {
+	float: right;
+	border-right-width: 2px;
+}
+
+.progress-meter > .meter-right:last-child {
+	border-left-width: 2px;
+}
+
+.progress-meter > .meter > .meter-text {
+	position: absolute;
+	display: inline-block;
+	bottom: -20px;
+	width: 100%;
+	font-weight: 700;
+	font-size: 0.85em;
+	color: rgb(160, 160, 160);
+	text-align: left;
+}
+
+.progress-meter > .meter.meter-right > .meter-text {
+	text-align: right;
+}
+
+.circlePercent {
     position: relative;
-    font-size: 24px;
-    font-weight: bold;
-    color: #4caf50;
+    margin: auto auto;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: rgb(14, 241, 164);
   }
+  .circlePercent:before,
+  .circlePercent > .progressEnd {
+    position: absolute;
+    z-index: 3;
+    top: 2px;
+    left: 45px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    -ms-transform-origin: 3px 46px;
+    transform-origin: 3px 46px;
+    content: "";
+  }
+  .circlePercent:after,
+  .circlePercent > .progress {
+    position: absolute;
+    -ms-transform-origin: 48px 48px;
+    transform-origin: 48px 48px;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 96px;
+    border-radius: 48px 0 0 48px;
+    background: rgb(14, 241, 164);
+    content: "";
+  }
+  .circlePercent.fiftyPlus:after {
+    background: white;
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .circlePercent > .progress.progress {
+    background: white;
+  }
+  .circlePercent > .counter {
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    margin-top: -2px;
+    margin-left: -2px;
+    border-radius: 50%;
+    border: 4px solid rgb(14, 241, 164);
+  }
+  .circlePercent > .counter:before {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    margin-top: -13px;
+    width: 100%;
+    height: 26px;
+    font-size: 26px;
+    line-height: 26px;
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+  }
+  .circlePercent > .counter:after {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 6px;
+    left: 6px;
+    border-radius: 50%;
+    background: rgb(14, 241, 164);
+    content: "";
+  }
+  .counter:hover {
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    margin-top: -2px;
+    margin-left: -2px;
+    border-radius: 50%;
+    border: 4px solid rgb(0, 201, 124);
+  }
+  .progress:hover {
+    position: absolute;
+    -ms-transform-origin: 48px 48px;
+    transform-origin: 48px 48px;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 96px;
+    border-radius: 48px 0 0 48px;
+    background: black;
+    content: "";
+  }
+  .circlePercent > .counter[data-percent="100"] {
+    background: white;
+  }
+  .progress-bar {
+    width: 100%;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.filler {
+    height: 100%;
+    background-color: rgb(14, 241, 164);
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+  
+  /*Now the CSS Created by R.S*/
+* {margin: 0; padding: 0;}

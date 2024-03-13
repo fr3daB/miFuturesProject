@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.tile {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+}
