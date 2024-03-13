@@ -1,0 +1,217 @@
+<!-- layout inheritance to use elements which should be common across all pages. -->
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- These are some basics meta and because I am using bootstrap, it requires boostrap's css and js to be included. This is in the layout because all pages are going to inherit it. -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <!-- linking to google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="css/diagnosticTest.css" rel="stylesheet">
+
+
+
+    
+    </head>
+    <body>
+        <!--NAV BAR -->
+        <!-- Standard bootstrap template various elements such as dropdown menu, colors and positioning combined to produce desired nav bar.  -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-steel fixed-top " data-bs-theme="dark" style="background-color: black;">
+            <div class="container-fluid">
+              <a class="navbar-brand" style="font-weight: bolder;" href="#"> <!-- This is where the logo goes.-->
+                <h5>SKILLS BURST</h5>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #f843f8; font-weight: bold;" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #f843f8; font-weight: bold;" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #f843f8; font-weight: bold;" href="#">Diagnostic Test</a>
+                    </li>
+                    <!-- Dropdown menu, standrd templated obtained from boostrap, used css to modify colours. pretty standard-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="color: #f843f8; font-weight: bold;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Skills
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Problem Solving</a></li>
+                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Skill 1</a></li>
+                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Skill 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- right side buttons where the ms-auto pushes it to the other end.-->
+                <ul class="navbar-nav ms-auto">
+                    <!-- this checks if the user is logged then we wont to display the username and logout button -->
+                        <!-- wanted to use the nav link, the # doesn't load anywhere but inherits the navlink styling. -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #0ef1a4; font-weight: bold;" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #0ef1a4; font-weight: bold;" href="#">Register</a>
+                        </li>
+                    
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+        <section class="container-fluid pt-5">
+            <div class="div-form"> 
+                <form action="#" id="quiz-form">
+                    <div class="quiz">
+                        <p><strong>1. You have a 3-gallon jug and a 5-gallon jug, and your goal is to measure out exactly 4 gallons of water. How do you do it?</strong></p>
+                        <input type="radio" id="q1-choice1" name="q1">
+                        <label for="q1-choice1">a) Fill the 5-gallon jug, then use it to fill the 3-gallon jug.</label><br>
+                        <input type="radio" id="q1-choice2" name="q1">
+                        <label for="q1-choice2">b) Fill the 3-gallon jug, then use it to fill the 5-gallon jug.</label><br>
+                        <input type="radio" id="q1-choice3" name="q1">
+                        <label for="q1-choice3">c) Fill both jugs to the top and pour them into a larger container.</label><br>
+                        <input type="radio" id="q1-choice4" name="q1">
+                        <label for="q1-choice4">d) It's not possible to measure exactly 4 gallons.</label>
+                    </div>
+                    
+                    <div class="quiz">
+                        <p><strong>2. You are given a set of scales and 12 identical-looking balls. One of the balls is slightly heavier than the others. How can you find the heavier ball using the scales only three times?</strong></p>
+                        <input type="radio" id="q2-choice1" name="q2">
+                        <label for="q2-choice1">a) Weigh three groups of four balls each.</label><br>
+                        <input type="radio" id="q2-choice2" name="q2">
+                        <label for="q2-choice2">b) Weigh two groups of six balls each.</label><br>
+                        <input type="radio" id="q2-choice3" name="q2">
+                        <label for="q2-choice3">c) Weigh three groups of three balls each.</label><br>
+                        <input type="radio" id="q2-choice4" name="q2">
+                        <label for="q2-choice4">d) It's not possible to find the heavier ball in three weighings.</label>
+                    </div>
+                    
+                    <div class="quiz">
+                        <p><strong>3. You have a 9x9 Sudoku grid. Each row, column, and subgrid must contain the numbers 1 through 9 without repetition. How do you solve the Sudoku puzzle?</strong></p>
+                        <input type="radio" id="q3-choice1" name="q3">
+                        <label for="q3-choice1">a) Fill in the numbers randomly.</label><br>
+                        <input type="radio" id="q3-choice2" name="q3">
+                        <label for="q3-choice2">b) Use a process of elimination and logic to fill in the numbers.</label><br>
+                        <input type="radio" id="q3-choice3" name="q3">
+                        <label for="q3-choice3">c) Fill in the numbers sequentially from 1 to 9.</label><br>
+                        <input type="radio" id="q3-choice4" name="q3">
+                        <label for="q3-choice4">d) Guess the numbers until the puzzle is complete.</label>
+                    </div>
+                    
+                    <div class="quiz">
+                        <p><strong>4. You have eight balls, and one is slightly heavier than the others. You also have a balance scale. What is the minimum number of weighings needed to find the heavier ball?</strong></p>
+                        <input type="radio" id="q4-choice1" name="q4">
+                        <label for="q4-choice1">a) One weighing.</label><br>
+                        <input type="radio" id="q4-choice2" name="q4">
+                        <label for="q4-choice2">b) Two weighings.</label><br>
+                        <input type="radio" id="q4-choice3" name="q4">
+                        <label for="q4-choice3">c) Three weighings.</label><br>
+                        <input type="radio" id="q4-choice4" name="q4">
+                        <label for="q4-choice4">d) Four weighings.</label>
+                    </div>
+                    
+                    <div class="quiz">
+                        <p><strong>5. You are in a room with three light switches, each controlling a different light bulb in the next room. How can you determine which switch corresponds to which bulb, if you are only allowed to enter the next room once?</strong></p>
+                        <input type="radio" id="q5-choice1" name="q5">
+                        <label for="q5-choice1">a) Turn on all three switches and enter the room.</label><br>
+                        <input type="radio" id="q5-choice2" name="q5">
+                        <label for="q5-choice2">b) Turn on one switch, wait for a few minutes, turn it off, and then repeat with the other switches.</label><br>
+                        <input type="radio" id="q5-choice3" name="q5">
+                        <label for="q5-choice3">c) Turn on one switch, enter the room, and check the bulbs.</label><br>
+                        <input type="radio" id="q5-choice4" name="q5">
+                        <label for="q5-choice4">d) Flip the switches randomly and enter the room.</label>
+                    </div>
+                    
+                    <div class="quiz">
+                        <p><strong>6. You have a rope that takes exactly one hour to burn from end to end. The rope does not burn at a consistent rate. How can you use the rope to measure exactly 45 minutes?</strong></p>
+                        <input type="radio" id="q6-choice1" name="q6">
+                        <label for="q6-choice1">a) Light the rope at one end and wait for 45 minutes.</label><br>
+                        <input type="radio" id="q6-choice2" name="q6">
+                        <label for="q6-choice2">b) Light both ends of the rope simultaneously.</label><br>
+                        <input type="radio" id="q6-choice3" name="q6">
+                        <label for="q6-choice3">c) Cut the rope in half and burn one half.</label><br>
+                        <input type="radio" id="q6-choice4" name="q6">
+                        <label for="q6-choice4">d) Use a stopwatch to time the burning of the rope.</label>
+                    </div>
+                    
+                    <div class="quiz">
+                        <p><strong>7. You have 12 marbles that appear identical, but one is slightly heavier than the others. How can you find the heavier marble using a balance scale in only three weighings?</strong></p>
+                        <input type="radio" id="q7-choice1" name="q7">
+                        <label for="q7-choice1">a) Weigh two groups of six marbles each.</label><br>
+                        <input type="radio" id="q7-choice2" name="q7">
+                        <label for="q7-choice2">b) Weigh three groups of four marbles each.</label><br>
+                        <input type="radio" id="q7-choice3" name="q7">
+                        <label for="q7-choice3">c) Weigh four groups of three marbles each.</label><br>
+                        <input type="radio" id="q7-choice4" name="q7">
+                        <label for="q7-choice4">d) It's not possible to find the heavier marble in three weighings.</label>
+                    </div>
+                    
+                    <div class="quiz">
+                        <p><strong>8. You have a 5-liter jug and a 3-liter jug, and your goal is to measure out exactly 4 liters of water. How do you do it?</strong></p>
+                        <input type="radio" id="q8-choice1" name="q8">
+                        <label for="q8-choice1">a) Fill the 5-liter jug and pour it into the 3-liter jug.</label><br>
+                        <input type="radio" id="q8-choice2" name="q8">
+                        <label for="q8-choice2">b) Fill the 3-liter jug and pour it into the 5-liter jug.</label><br>
+                        <input type="radio" id="q8-choice3" name="q8">
+                        <label for="q8-choice3">c) Fill both jugs to the top and pour them into a larger container.</label><br>
+                        <input type="radio" id="q8-choice4" name="q8">
+                        <label for="q8-choice4">d) It's not possible to measure exactly 4 liters.</label>
+                    </div>
+                    
+                    <div class="quiz">
+                        <p><strong>9. You have a 7-minute hourglass and an 11-minute hourglass. How can you measure exactly 15 minutes?</strong></p>
+                        <input type="radio" id="q9-choice1" name="q9">
+                        <label for="q9-choice1">a) Start both hourglasses at the same time.</label><br>
+                        <input type="radio" id="q9-choice2" name="q9">
+                        <label for="q9-choice2">b) Start the 11-minute hourglass and flip it when it runs out, then start the 7-minute hourglass.</label><br>
+                        <input type="radio" id="q9-choice3" name="q9">
+                        <label for="q9-choice3">c) Start the 7-minute hourglass and flip it when it runs out, then start the 11-minute hourglass.</label><br>
+                        <input type="radio" id="q9-choice4" name="q9">
+                        <label for="q9-choice4">d) It's not possible to measure exactly 15 minutes.</label>
+                    </div>
+                    
+                    <div class="quiz">
+                        <p><strong>10. You have a 4x4 grid with some cells filled with numbers from 1 to 4. Each row and each column must contain each number exactly once. How do you complete the grid?</strong></p>
+                        <input type="radio" id="q10-choice1" name="q10">
+                        <label for="q10-choice1">a) Fill in the numbers randomly.</label><br>
+                        <input type="radio" id="q10-choice2" name="q10">
+                        <label for="q10-choice2">b) Use a process of elimination and logic to fill in the numbers.</label><br>
+                        <input type="radio" id="q10-choice3" name="q10">
+                        <label for="q10-choice3">c) Fill in the numbers sequentially from 1 to 4.</label><br>
+                        <input type="radio" id="q10-choice4" name="q10">
+                        <label for="q10-choice4">d) Guess the numbers until the grid is complete.</label>
+                    </div>
+
+                    <input type="submit" id="submit">
+                </form>
+                <div id="result-container">
+
+                    <div id="result-div">
+                    
+                    </div>
+                    <div id="percent-div">
+
+                    </div>
+                    <div id="retry">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="js/diagnosticTest.js" ></script>
+        <!-- Bootstrap's Javascript elements -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    </body>
+</html>

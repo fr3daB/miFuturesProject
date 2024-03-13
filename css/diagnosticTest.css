@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 22px;
+    font-family: Montserrat;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #0ef1a4;
+}
+
+
+section{
+    display: flex;
+    justify-content: center;
+}
+
+.div-form{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+form > div{
+    background-color: #f843f2;
+    color: black;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+form>div>p {
+    margin: 20px 0px;
+}
+
+form>div>input{
+    margin-left: 20px;
+    margin: 15px;
+}
+
+#result-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+}
+
+#result-div{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.try-again, #submit{
+    margin: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    align-self: center;
+    width: 40%;
+    border: none;
+}
+
+#percent-msg{
+    color: black;
+}
+
+#percent-div{
+    margin: 20px 0px;
+    text-align: center;
+}
+
+#score{
+    color: black;
+}
+
+
+
+#retry{
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 500px){
+    .div-form{
+        width: initial;
+    }
+
+    form{
+        margin: 5px;
+    }
+}
