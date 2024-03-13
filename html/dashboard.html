@@ -13,10 +13,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
+    <script src="../js/circleProgress.js"></script>
 </head>
 
 
-<body class="home">
+<body class="home" onload="start()">
     <!-- //  INTRO  // -->
     <div class="content-wrapper">
         <div class="content-bg">
@@ -85,7 +86,7 @@
 
             <!-- //  ABOUT ME  // -->
             <main>
-                <section id="skills">
+                <!-- <section id="skills">
                     <h2>Skills</h2>
                     <ul>
                         <li><a href="skill1.html">Skill 1<span> (2,318 views)</span></a></li>
@@ -93,9 +94,14 @@
                         <li><a href="skill3.html">Skill 3<span> (156 views)</span></a></li>
                         <li><a href="skill4.html">Skill 4<span> (3,671 views)</span></a></li>
                     </ul>
-                </section>
+                </section> -->
                 <section id="progress">
                     <h2>Current Skill Progress</h2>
+                    <div id="ee" class="circlePercent">
+                        <div class="counter"></div>
+                        <div class="progress"></div>
+                        <div class="progressEnd"></div>
+                    </div>
                     <ul>
                         <li>
                             <div class="progress-bar" style="width: 38.6%;"></div>
@@ -174,6 +180,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
-
 
 </html>
