@@ -123,7 +123,6 @@ function getResult(){
     resultDiv.innerHTML = `<h2 id="score">Your score is ${score} out of 20</h2>`
     
     percentDiv.innerHTML = `<h2 id="score">You have ${percentage}% problem solving skill level!</h2>`
-    percentMessage.innerHTML = `<button id="home" class="try-again">Back to home</button>`
-
+    percentMessage.innerHTML = `<button id="home" class="try-again">Back to dashboard</button>`
 
 }
