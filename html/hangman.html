@@ -266,8 +266,10 @@
             }
 
             if (correctGuesses === wordToGuess.length) {
-                document.getElementById("result").textContent = "Congratulations! You guessed the word: " + wordToGuess;
-                displayRandomPrompt();
+                //document.getElementById("result").textContent = "Congratulations! You guessed the word: " + wordToGuess;
+                localStorage.setItem("format", "hangman");
+                localStorage.setItem("l1", JSON.parse(localStorage.getItem("l1")) + 1);
+                setTimeout(function () { location.href = '../html/gameEnd.html'; }, 555)
             }
 
             // Check if the game is lost
