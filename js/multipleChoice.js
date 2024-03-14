@@ -1,4 +1,4 @@
-const questionData = [
+const questionData1 = [
     {
         question: "Coronavirus disease (COVID-19) is an infectious disease caused by a new virus.",
         answer: true,
@@ -15,6 +15,35 @@ const questionData = [
         image: "../assets/gitlab.png"
     }
 ];
+
+const questionData2 = [
+    {
+        question: "Harder Question???",
+        answer: true,
+        image: "../assets/padlock.png"
+    },
+    {
+        question: "The Earth is flat.",
+        answer: false,
+        image: "../assets/dice_icon.png"
+    },
+    {
+        question: "Apples are a type of fruit.",
+        answer: true,
+        image: "../assets/gitlab.png"
+    }
+];
+
+var questionData;
+
+switch (localStorage.getItem("mc")) {
+    case "1":
+        questionData = questionData1;
+        break;
+    case "2":
+        questionData = questionData2;
+        break;
+}
 
 let currentQuestionIndex = 0;
 const questionCount = document.querySelector('.question-count');
@@ -66,9 +95,9 @@ function checkAnswer(userAnswer) {
     if (currentQuestionIndex < questionData.length) {
         displayQuestion();
     } else {
-        showPopup(`You have completed the quiz! You got ${correctAnswers.filter(Boolean).length} out of ${questionData.length} questions correct.`);
         localStorage.setItem("format", "multiple");
         localStorage.setItem("score", [correctAnswers.filter(Boolean).length, questionData.length]);
+        localStorage.setItem("l1", JSON.parse(localStorage.getItem("l1")) + 1);
         setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
     }
 }
@@ -85,6 +114,7 @@ function startTimer() {
             showPopup('Time is up! Quiz has ended.');
             localStorage.setItem("format", "multiple");
             localStorage.setItem("score", [correctAnswers.filter(Boolean).length, questionData.length]);
+            localStorage.setItem("l1", JSON.parse(localStorage.getItem("l1")) + 1);
             setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
         }
 

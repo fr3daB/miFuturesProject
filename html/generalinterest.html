@@ -1,0 +1,169 @@
+<!-- layout inheritance to use elements which should be common across all pages. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- These are some basics meta and because I am using bootstrap, it requires boostrap's css and js to be included. This is in the layout because all pages are going to inherit it. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- linking to google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="../css/diagnosticTest.css" rel="stylesheet">
+    <link href="../css/generalInterest.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+    <!--NAV BAR -->
+    <!-- Standard bootstrap template various elements such as dropdown menu, colors and positioning combined to produce desired nav bar.  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-steel fixed-top " data-bs-theme="dark"
+        style="background-color: black;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-weight: bolder;" href="#"> <!-- This is where the logo goes.-->
+                <h5>SKILLS BURST</h5>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #f843f8; font-weight: bold;"
+                            href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #f843f8; font-weight: bold;" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #f843f8; font-weight: bold;" href="diagnosticTest.html">Diagnostic Test</a>
+                    </li>
+                    <!-- Dropdown menu, standrd templated obtained from boostrap, used css to modify colours. pretty standard-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="color: #f843f8; font-weight: bold;" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Skills
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Problem
+                                    Solving</a></li>
+                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Skill 1</a>
+                            </li>
+                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Skill 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- right side buttons where the ms-auto pushes it to the other end.-->
+                <ul class="navbar-nav ms-auto">
+                    <!-- this checks if the user is logged then we wont to display the username and logout button -->
+                    <!-- wanted to use the nav link, the # doesn't load anywhere but inherits the navlink styling. -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #0ef1a4; font-weight: bold;" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #0ef1a4; font-weight: bold;" href="#">Register</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- input your interst -->
+
+<div class="container pt-5 mt-1">
+    <h1>Welcome to Skills Burst</h1>
+    <p>Lets get to know you...!</p>
+
+    <div class="section">
+        <h2>MY PRONOUNS ARE...</h2>
+        <div class="options">
+            <button onclick="selectOption(this, 'pronouns')">he/him</button>
+            <button onclick="selectOption(this, 'pronouns')">her/she</button>
+            <button onclick="selectOption(this, 'pronouns')">they/them</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>I'M CURRENTLY...</h2>
+        <div class="options">
+            <button onclick="selectOption(this, 'current')">In School</button>
+            <button onclick="selectOption(this, 'current')">In College</button>
+            <button onclick="selectOption(this, 'current')">In Uni</button>
+            <button onclick="selectOption(this, 'current')">In training</button>
+            <button onclick="selectOption(this, 'current')">Working Part Time</button>
+            <button onclick="selectOption(this, 'current')">Working Full Time</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>MY HOBBIES AND INTERESTS ARE...</h2>
+        <div class="options">
+            <button onclick="selectOption(this, 'hobbies')"><span>&#127918;</span> Gaming</button>
+            <button onclick="selectOption(this, 'hobbies')"><span>&#9917;</span> Sport</button>
+            <button onclick="selectOption(this, 'hobbies')"><span>&#127925;</span> Music</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>MY FUTURE GOALS ARE...</h2>
+        <div class="options">
+            <button onclick="selectOption(this, 'goals')"><span>&#128176;</span> Big money</button>
+            <button onclick="selectOption(this, 'goals')"><span>&#128188;</span> Job for life</button>
+            <button onclick="selectOption(this, 'goals')"><span>&#128218;</span> Keep learning</button>
+            <button onclick="selectOption(this, 'goals')"><span>&#127968;</span> Own a business</button>
+        </div>
+    </div>
+    <a href="summativeAssessment.html">
+        <button type="button" id="nextButton"> Proceed to test your skills </button>
+    </a>
+
+</div>
+    <!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
+    <footer>
+        <p>© 2024 by Power Rangers | <a href="powerranger@cardiff.ac.uk">powerranger@cardiff.ac.uk</a></p>
+
+        <ul class="socials">
+            <li>
+                <a href="https://youtube.com" target="_blank"><img src="../assets/icon-logo-youtube.png"
+                        alt="Youtube"></a>
+            </li>
+            <li>
+                <a href="https://twitter.com" target="_blank"><img src="../assets/icon-logo-twitter.png"
+                        alt="Twitter"></a>
+            </li>
+            <li>
+                <a href="https://instagram.com" target="_blank"><img src="../assets/icon-logo-instagram.png"
+                        alt="My Instagram"></a>
+            </li>
+            <li>
+                <a href="https://git.cardiff.ac.uk/c23002705/mifutures-power-rangers" target="_blank"><img
+                        src="../assets/gitlab.png" alt="My Gitlab"></a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Bootstrap's Javascript elements -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+

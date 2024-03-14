@@ -6,10 +6,22 @@ const winScreen = document.getElementById('win-screen');
 const winMovesSpan = document.getElementById('win-moves');
 const cards = [];
 const d1 = ['🍎', '🍌'];
-const d2 = ['🍎', '🍌', '🍒', '🍓', '🍕'];
+const d2 = ['🍎', '🍌', '🍒', '🍓'];
 const d3 = ['🍎', '🍌', '🍒', '🍓', '🍕', '🍩'];
 const d4 = ['🍎', '🍌', '🍒', '🍓', '🍕', '🍩', '🍭', '🥧'];
-const symbols = d1;
+var symbols;
+switch (localStorage.getItem("md")) {
+ case "1":
+    symbols = d1;
+    break;
+case "2":
+    symbols = d2;
+    break;
+case "3":
+    symbols = d3;
+    break;
+}
+
 const flippedCards = [];
 let moves = 0;
 
@@ -59,6 +71,9 @@ function checkWin() {
         message.textContent = `Congratulations! You won in ${moves + 1} moves.`;
         continueBtn.style.display = 'block';
         cards.forEach(card => card.removeEventListener('click', handleClick));
+        localStorage.setItem("format", "memory");
+        localStorage.setItem("moves", moves);
+        localStorage.setItem("l1", JSON.parse(localStorage.getItem("l1")) + 1);
         setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
     }
 }
@@ -73,7 +88,5 @@ cards.forEach(card => card.addEventListener('click', handleClick));
 // Continue button event listener
 continueBtn.addEventListener('click', () => {
     // Reset the game or continue to the next level
-    localStorage.setItem("format", "memory");
-    localStorage.setItem("moves", moves);
     location.href='../html/gameEnd.html';
 });

@@ -105,6 +105,30 @@ function getResult(){
 
     let percentage = (score / 20) * 100;
 
+    //Display various messages depending on percentage score
+
+    if(percentage >= 50){
+        percentMessage.innerHTML = 
+        `
+        <h3 id="percent-msg">You scored excellently. Explore opportunities related to problem solving skill!</h3>
+        <button id="home" class="try-again">Dashboard</button>
+        `
+    }else if(percentage < 50){
+        percentMessage.innerHTML = 
+        `
+        <h3 id="percent-msg">Great! Now lets improve that problem solving skill!</h3>
+        <button id="home" class="try-again">Dashboard</button>
+        `
+    }
+
+    //Function to take user back to homepage
+    const toHome = document.getElementById("home");
+    const retakeTestBtn = document.getElementById("to-home");
+    
+    if(retakeTestBtn)
+        retakeTestBtn.addEventListener('click', getUserToHomePage)
+    if(toHome)
+        toHome.addEventListener('click', getUserToHomePage)
 
     function getUserToHomePage(){
         window.location.replace("dashboard.html")
@@ -120,9 +144,9 @@ function getResult(){
     const resultDiv = document.getElementById("result-div")
     const percentDiv = document.getElementById("percent-div")
 
+
     resultDiv.innerHTML = `<h2 id="score">Your score is ${score} out of 20</h2>`
     
-    percentDiv.innerHTML = `<h2 id="score">You have ${percentage}% problem solving skill level!</h2>`
-    percentMessage.innerHTML = `<button id="home" class="try-again">Back to dashboard</button>`
+    percentDiv.innerHTML = `<h2 id="score">You have ${percentage}% score</h2>`
 
 }
