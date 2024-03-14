@@ -9,7 +9,7 @@ const d1 = ['🍎', '🍌'];
 const d2 = ['🍎', '🍌', '🍒', '🍓', '🍕'];
 const d3 = ['🍎', '🍌', '🍒', '🍓', '🍕', '🍩'];
 const d4 = ['🍎', '🍌', '🍒', '🍓', '🍕', '🍩', '🍭', '🥧'];
-const symbols = d4;
+const symbols = d1;
 const flippedCards = [];
 let moves = 0;
 
@@ -59,16 +59,12 @@ function checkWin() {
         message.textContent = `Congratulations! You won in ${moves + 1} moves.`;
         continueBtn.style.display = 'block';
         cards.forEach(card => card.removeEventListener('click', handleClick));
-        setTimeout(function() {location.href='../html/gameEnd.html';}, 500)
+        setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
     }
 }
 
 // Initialize the game
 createBoard();
-
-se
-
-sa
 
 // Add click event listeners to the cards
 const handleClick = (e) => flipCard(e.currentTarget);
