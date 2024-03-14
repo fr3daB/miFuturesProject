@@ -45,12 +45,11 @@ function select1() {
       break;
     case "4":
       localStorage.setItem("l1percent", 50);
-      location.href = '../html/numberReorder.html';
+      location.href = '../html/hangman.html';
       break;
     case "5":
-      localStorage.setItem("md", 2);
       localStorage.setItem("l1percent", 62.5);
-      location.href = '../html/memoryGame.html';
+      location.href = '../html/numberReorder.html';
       break;
     case "6":
       localStorage.setItem("md", 1);
