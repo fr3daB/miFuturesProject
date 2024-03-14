@@ -1,4 +1,4 @@
-img {
+#levels img {
     width: 40px;
     height: 40px;
     z-index: 300;
@@ -306,3 +306,49 @@ body {
   
   /*Now the CSS Created by R.S*/
 * {margin: 0; padding: 0;}
+
+ /* FOOTER
+------------------------------------*/
+footer {
+  background: #222;
+  color: #d3d4d6;
+}
+
+footer p {
+  padding: 0 10px;
+}
+
+.socials {
+  list-style-type: none;
+  padding: 0;
+}
+
+.socials li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.socials img {
+  width: 32px;
+}
+
+.socials img:hover {
+  /* filter: brightness(0.8); */
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 860px) {
+  footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+  }
+}
+
+/* only show center align for screen size < 500px */
+@media screen and (max-width: 500px) {
+  footer {
+      text-align: center;
+      padding: 10px;
+  }
+}

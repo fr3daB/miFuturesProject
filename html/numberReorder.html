@@ -101,7 +101,6 @@
       <h1>Number Reorder Game</h1>
       <p>Reorder the numbers to form a square with the last number missing.</p>
       <p>Use the arrow keys or click on the numbers to swap them with the blank space.</p>
-      <p>Enter 'q' to quit.</p>
       <div id="game-board" class="grid"></div>
       <div class="reason-box" id="reason-box"></div> <!-- Reason box -->
 
@@ -193,13 +192,15 @@
     const checkWin = () => {
       const sortedNumbers = [...Array(totalNumbers).keys()].map(i => i + 1).concat([null]);
       if (numbers.every((value, index) => value === sortedNumbers[index])) {
-        alert('Congratulations! You have reordered the numbers correctly.');
+        localStorage.setItem("format", "numberReorder");
+        localStorage.setItem("l1", JSON.parse(localStorage.getItem("l1")) + 1);
+        setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
         resetGame();
       }
     };
 
     const resetGame = () => {
-      const confirmed = confirm('Would you like to play again?');
+      const confirmed = false;
       if (confirmed) {
         numbers = generateNumbers(sideLength);
         printBoard();
@@ -215,7 +216,10 @@
       document.addEventListener('keydown', handleKeydown);
       document.addEventListener('keydown', (e) => {
         if (e.key.toLowerCase() === 'q') {
-          alert('Quitting the game.');
+          checkWin();
+          localStorage.setItem("format", "numberReorder");
+          localStorage.setItem("l1", JSON.parse(localStorage.getItem("l1")) + 1);
+          setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
         }
       });
     };

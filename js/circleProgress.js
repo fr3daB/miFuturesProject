@@ -19,8 +19,11 @@ const e = (elem, start, end) => {
 }
  
 function start() {
-    e(document.getElementById('ee'), 0, localStorage.getItem("l1percent"));
-    e(document.getElementById('skill-1'), 0, 38.6)
-    e(document.getElementById('skill-2'), 0, 22.5)
-    e(document.getElementById('skill-3'), 0, 30.8)
+    e(document.getElementById('ee'), 0, (JSON.parse(localStorage.getItem("l1percent")) + 23 + 31) / 3);
+    e(document.getElementById('skill-1'), 0, localStorage.getItem("l1percent"))
+    e(document.getElementById('skill-2'), 0, 23)
+    e(document.getElementById('skill-3'), 0, 31)
+    document.getElementById(`pg1`).style.width = `${JSON.parse(localStorage.getItem("l1percent"))}%`;
+    console,console.log(localStorage.getItem("l1percent"));
+    document.getElementById('pg1').innerHTML = `${JSON.parse(localStorage.getItem("l1percent"))}%`;
 }
