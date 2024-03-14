@@ -20,13 +20,12 @@ const e = (elem, start, end) => {
 
 function start() {
   // Reset
-  localStorage.setItem("l1percent", 0);
-  localStorage.setItem("l1", 1);
+  //localStorage.setItem("l1percent", 0);
+  //localStorage.setItem("l1", 1);
   console.log(localStorage.getItem("l1percent"));
   e(document.getElementById('c1'), 0, localStorage.getItem("l1percent"));
   document.getElementById('lebar').style.width = `${localStorage.getItem("l1percent")/document.getElementById('lebar').style.width}px`;
 }
-
 
 function select1() {
   var l = localStorage.getItem('l1');
