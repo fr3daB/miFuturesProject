@@ -498,3 +498,72 @@ footer p{
         padding: 10px;
     }  
 }
+
+/* Daily Streak */
+#daily-streak {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.streak-container {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 0.25rem;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.streak-calendar {
+  display: flex;
+  margin-right: 2rem;
+}
+
+.day {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+}
+
+.day.current {
+  background-color: #f843f8;
+}
+
+.icon {
+  font-size: 1.2rem;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.streak-info {
+  text-align: center;
+}
+
+.streak-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0ef1a4;
+  margin-bottom: 0.5rem;
+}
+
+.streak-info p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.streak-count {
+  color: #f843f8;
+  font-weight: bold;
+}
