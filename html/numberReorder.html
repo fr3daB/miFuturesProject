@@ -44,6 +44,12 @@
     h1 {
             font-family: 'Baron Neue', sans-serif;
         }
+    .reason-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 20px;
+      text-align: left; /* Align text to the left */
+    }
   </style>
 </head>
 <body>
@@ -96,6 +102,8 @@
       <p>Reorder the numbers to form a square with the last number missing.</p>
       <p>Use the arrow keys or click on the numbers to swap them with the blank space.</p>
       <div id="game-board" class="grid"></div>
+      <div class="reason-box" id="reason-box"></div> <!-- Reason box -->
+
   </div>
   
 
@@ -104,6 +112,19 @@
 
   <script>
     let numbers, sideLength, blankIndex, totalNumbers;
+
+    const reasons = [
+      "You see how in this game you have to move things around? That’s spatial reasoning at work—figuring out where stuff goes and how to get it there!",
+      "Ever tried something over and over until you nailed it? That’s the power of persistence and resilience—learning from every try and getting better each time!",
+      "Ever come up with a cool strategy for beating a tough game level? That’s algorithmic thinking—coming up with a plan and making it happen!",
+      "Ever played a puzzle where you have to plan each move carefully? That’s sequential reasoning in action—making a plan and sticking to it!",
+      "Sequential reasoning is like being a master planner. You gotta think about what comes first, what comes next, and how it all fits together in the end!"
+    ];
+
+    const printRandomReason = () => {
+      const randomIndex = Math.floor(Math.random() * reasons.length);
+      document.getElementById('reason-box').textContent = reasons[randomIndex];
+    };
 
     const generateNumbers = (n) => {
       totalNumbers = n * n - 1;
@@ -187,6 +208,7 @@
     };
 
     const main = () => {
+      printRandomReason();
       sideLength = parseInt(prompt('Enter side length: '), 10) || 3;
       numbers = generateNumbers(sideLength);
       printBoard();
