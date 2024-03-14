@@ -67,6 +67,8 @@ function checkAnswer(userAnswer) {
         displayQuestion();
     } else {
         showPopup(`You have completed the quiz! You got ${correctAnswers.filter(Boolean).length} out of ${questionData.length} questions correct.`);
+        localStorage.setItem("format", "multiple");
+        localStorage.setItem("score", [correctAnswers.filter(Boolean).length, questionData.length]);
         setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
     }
 }
@@ -81,6 +83,8 @@ function startTimer() {
         if (timeRemaining === 0) {
             clearInterval(quizTimer);
             showPopup('Time is up! Quiz has ended.');
+            localStorage.setItem("format", "multiple");
+            localStorage.setItem("score", [correctAnswers.filter(Boolean).length, questionData.length]);
             setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
         }
 

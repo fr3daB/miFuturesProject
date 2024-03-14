@@ -73,9 +73,7 @@ cards.forEach(card => card.addEventListener('click', handleClick));
 // Continue button event listener
 continueBtn.addEventListener('click', () => {
     // Reset the game or continue to the next level
-    localStorage.setItem("score", moves);
+    localStorage.setItem("format", "memory");
+    localStorage.setItem("moves", moves);
     location.href='../html/gameEnd.html';
 });
-
-// retrieve data value
-var name = localStorage.getItem("name");
