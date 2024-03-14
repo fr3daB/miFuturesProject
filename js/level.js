@@ -26,6 +26,7 @@ function start() {
 
 function select1() {
   var l = localStorage.getItem('l1');
+  console.log(l);
   switch (l) {
     case "1":
       localStorage.setItem("mc", 1);
@@ -58,12 +59,12 @@ function select1() {
       break;
     case "7":
       localStorage.setItem("md", 3);
-      localStorage.setItem("l1percent", 100);
+      localStorage.setItem("l1percent", 97.5);
       location.href = '../html/memoryGame.html';
       break;
     case "8":
       localStorage.setItem("mc", 2);
-      localStorage.setItem("l1percent", 87.5);
+      localStorage.setItem("l1percent", 100);
       location.href = '../html/multipleChoice.html';
         break;
     default:
