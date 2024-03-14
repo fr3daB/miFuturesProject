@@ -1,67 +1,65 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 22px;
     font-family: Montserrat;
 }
-
-body{
+ 
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: white;
 }
-
-
-section{
+ 
+section {
     display: flex;
     justify-content: center;
 }
-
-.div-form{
+ 
+.div-form {
     display: flex;
     width: 60%;
     justify-content: center;
     flex-direction: column;
 }
-
-form{
+ 
+form {
     display: flex;
     flex-direction: column;
     margin: 20px;
 }
-
-form > div{
+ 
+form > div {
     background-color: #f843f2;
     color: black;
     margin: 20px;
     padding: 20px;
     border-radius: 5px;
 }
-
-form>div>p {
+ 
+form > div > p {
     margin: 20px 0px;
 }
-
-form>div>input{
+ 
+form > div > input {
     margin-left: 20px;
     margin: 15px;
 }
-
-#result-container{
+ 
+#result-container {
     display: flex;
     flex-direction: column;
-    padding-top: 150px;
 }
-
-#result-div{
-    display:flex;
+ 
+#result-div {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.try-again, #submit{
+ 
+.try-again, #submit {
     margin: 10px;
     font-size: 1em;
     font-weight: bold;
@@ -74,73 +72,84 @@ form>div>input{
     width: 40%;
     border: none;
 }
-
-#percent-msg{
+ 
+#percent-msg {
     color: black;
 }
-
-#percent-div{
+ 
+#percent-div {
     margin: 20px 0px;
     text-align: center;
 }
-
-#score{
+ 
+#score {
     color: black;
 }
-
-#retry{
+ 
+#retry {
     text-align: center;
 }
-
-
-@media only screen and (max-width: 500px){
-    .div-form{
+ 
+@media only screen and (max-width: 500px) {
+    .div-form {
         width: initial;
     }
-
-    form{
+ 
+    form {
         margin: 5px;
     }
 }
+ 
 a {
     color: #3c8453;
 }
+ 
 a:hover {
     color: #bcaa96;
     text-decoration: none;
 }
+ 
 footer a {
-    color: #f843f8; font-weight: bold;
+    color: #f843f8;
+    font-weight: bold;
     text-decoration: none;
 }
+ 
 footer a:hover {
-    color: #0ef1a4; font-weight: bold;
+    color: #0ef1a4;
+    font-weight: bold;
     text-decoration: none;
 }
+ 
 footer {
     background: #222;
     color: #d3d4d6;
-
+    margin-top: auto; /* This will push the footer to the bottom */
 }
-footer p{
+ 
+footer p {
     padding: 0 10px;
 }
+ 
 .socials {
     list-style-type: none;
     padding: 0;
 }
+ 
 .socials li {
     display: inline-block;
     margin-left: 10px;
 }
+ 
 .socials img {
     width: 32px;
 }
+ 
 .socials img:hover {
     /* filter: brightness(0.8); */
     opacity: 0.8;
 }
-
+ 
 @media screen and (min-width: 860px) {
     footer {
         display: flex;
@@ -148,10 +157,11 @@ footer p{
         padding: 10px 20px;
     }
 }
+ 
 /* only show center align for screen size < 500px */
 @media screen and (max-width: 500px) {
     footer {
         text-align: center;
         padding: 10px;
-    }  
+    }
 }
