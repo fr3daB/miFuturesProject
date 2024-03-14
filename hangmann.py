@@ -1,165 +1,51 @@
 import random
-import sys
 
-hangman_loser = [
-    r'''
- ----------
-       |   |
-       O   |
-      /|\  |
-      / \  |
-           |
+def choose_word():
+    words = ["python", "hangman", "programming", "computer", "keyboard", "developer"]
+    return random.choice(words)
 
-  '''
-]
-
-wrong1 = [r'''
- ----------
-          
-       
-  
-      
-           
-
-  ''']
-
-wrong2 = [
-    r'''
- ----------
-           |
-           |
-           |
-           |
-           |
-
-  '''
-]
-
-wrong3 = [
-    r'''
- ----------
-       |   |
-           |
-           |
-           |
-           |
-
-  '''
-]
-
-wrong4 = [
-    r'''
- ----------
-       |   |
-       O   |
-           |
-           |
-           |
-
-  '''
-]
-
-wrong5 = [
-    r'''
- ----------
-       |   |
-       O   |
-       |   |
-           |
-           |
-
-  '''
-]
-
-wrong6 = [
-    r'''
- ----------
-       |   |
-       O   |
-       |\  |
-           |
-           |
-
-  '''
-]
-
-wrong7 = [
-    r'''
- ----------
-       |   |
-       O   |
-      /|\  |
-           |
-           |
-
-  '''
-]
-
-wrong8 = [
-    r'''
- ----------
-       |   |
-       O   |
-      /|\  |
-        \  |
-           |
-
-  '''
-]
-
-#words bank
-easywords = ["river", "table", "happy", "guitar", "movie"]
-mediumwords = ["elephant", "computer", "library", "pancake", "journey"]
-intermediatewords = ["persevere", "ethereal", "enigma", "quagmire", "insidious"]
-hardwords = ["serendipity", "exquisite", "cacophany", "mellifluos", "quixotic"]
-
-
-def difficulty(choice):
-
-    choice = int(choice)
-
-    if choice == 1:
-        word = random.choice(easywords)
-        print(word)
-    elif choice == 2:
-        word = random.choice(mediumwords)
-        print(word)
-    elif choice == 3:
-        word = random.choice(intermediatewords)
-        print(word)
-    elif choice == 4:
-        word = random.choice(hardwords)
-        print(word)
-    return word
-
-def main():
-    choice = input("Pick a level: 1, 2, 3, or 4: ")
-    chosen_word = difficulty(choice)
-    dashes = "_ " * len(chosen_word)
-    guessed_letters = []
-    wrong_count = 0
-
-    while wrong_count < 8:
-        print("       START                   ")
-        letter_guess = input("Guess a letter: ").lower()
-        print(dashes)
-        print("        END                    ")
-        print("Incorrect guesses: " + str(wrong_count))
-        print("Guessed Letters: " + ", ".join(guessed_letters))
-
-        if letter_guess in guessed_letters:
-            print("Already guessed.")
+def display_word(word, guessed_letters):
+    display = ""
+    for letter in word:
+        if letter in guessed_letters:
+            display += letter
         else:
-            if letter_guess not in chosen_word:
-                wrong_count += 1
-            guessed_letters.append(letter_guess)
+            display += "_"
+    return display
 
-        if letter_guess in  chosen_word:
-            print(letter_guess)
+def hangman():
+    print("Welcome to Hangman!")
+    word_to_guess = choose_word()
+    guessed_letters = []
+    attempts = 6
 
-        if set(guessed_letters) == set(chosen_word):
-            print("Congratulations! You guessed the word:", chosen_word)
-            
+    while attempts > 0:
+        print("\nAttempts left: ", attempts)
+        current_display = display_word(word_to_guess, guessed_letters)
+        print("Current word: ", current_display)
+
+        guess = input("Enter a letter: ").lower()
+
+        if len(guess) != 1 or not guess.isalpha():
+            print("Invalid input. Please enter a single letter.")
+            continue
+
+        if guess in guessed_letters:
+            print("You already guessed that letter. Try again.")
+            continue
+
+        guessed_letters.append(guess)
+
+        if guess not in word_to_guess:
+            attempts -= 1
+            print("Incorrect guess!")
+
+        if set(guessed_letters) == set(word_to_guess):
+            print("\nCongratulations! You guessed the word:", word_to_guess)
+            break
+
+    if attempts == 0:
+        print("\nSorry, you ran out of attempts. The correct word was:", word_to_guess)
 
 if __name__ == "__main__":
-  main()
+    hangman()
