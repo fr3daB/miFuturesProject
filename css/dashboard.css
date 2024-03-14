@@ -331,15 +331,27 @@ footer a:hover {
     border-radius: 16px;
 }
 
+.btn:hover {
+    /* background: #444; */
+    background: #0dc475;
+    opacity: 1.2;
+    color: white;
+    text-decoration: none;
+}
+
 .opprtunity p{
   font-size: 15px;
 }
 .opprtunity h5{
   font-size: 16px;
   margin-bottom: 2px;
+  font-weight: bold;
 }
 .opprtunity-item{
-    margin: 10px 0;
+    margin: 15px 0;
+    background-color: #f5f5f5;
+    border-radius: 0.25rem;
+    padding: 10px;
 }
 .opprtunity-item img{
     height: 105px;
@@ -425,6 +437,8 @@ footer a:hover {
   width: 100%;
   padding: 0.5rem;
   border-bottom: 1px solid #ccc;
+  background-color: #f5f5f5;
+  border-radius: 0.25rem;
 }
 
 #achievement li:last-child {
