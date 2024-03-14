@@ -13,7 +13,8 @@
     <!-- linking to google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link href="../css/diagnosticTest.css" rel="stylesheet">
     <link href="../css/generalInterest.css" rel="stylesheet">
@@ -35,9 +36,8 @@
                     <img src="../assets/output-onlinepngtools.png" alt="logo"
                         style="width: 50px; height: 50px; margin-left: 32px;">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -56,19 +56,18 @@
                         </li>
                         <!-- Dropdown menu, standrd templated obtained from boostrap, used css to modify colours. pretty standard-->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" style="color: #f843f8; font-weight: bold;"
-                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" style="color: #f843f8; font-weight: bold;" href="#"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Skills
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;"
-                                        href="#">Problem
+                                <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Problem
                                         Solving</a></li>
-                                <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;"
-                                        href="#">Skill 1</a>
+                                <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Skill
+                                        1</a>
                                 </li>
-                                <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;"
-                                        href="#">Skill 2</a>
+                                <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Skill
+                                        2</a>
                                 </li>
                             </ul>
                         </li>
@@ -90,56 +89,56 @@
     </header>
 
 
-<!-- input your interst -->
+    <!-- input your interst -->
 
-<div class="container pt-5 mt-4">
-    <h3>Welcome to Skills Burst</h1>
-    <p>Lets get to know you...!</p>
+    <div class="container pt-5 mt-4">
+        <h5>Welcome to Skills Burst</h5>
+        <p>Lets get to know you...!</p>
 
-    <div class="section">
-        <h4>MY PRONOUNS ARE...</h4>
-        <div class="options">
-            <button onclick="selectOption(this, 'pronouns')">he/him</button>
-            <button onclick="selectOption(this, 'pronouns')">her/she</button>
-            <button onclick="selectOption(this, 'pronouns')">they/them</button>
+        <div class="section">
+            <h5>MY PRONOUNS ARE...</h5>
+            <div class="options">
+                <button onclick="selectOption(this, 'pronouns')">he/him</button>
+                <button onclick="selectOption(this, 'pronouns')">her/she</button>
+                <button onclick="selectOption(this, 'pronouns')">they/them</button>
+            </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h4>I'M CURRENTLY...</h4>
-        <div class="options">
-            <button onclick="selectOption(this, 'current')">In School</button>
-            <button onclick="selectOption(this, 'current')">In College</button>
-            <button onclick="selectOption(this, 'current')">In Uni</button>
-            <button onclick="selectOption(this, 'current')">In training</button>
-            <button onclick="selectOption(this, 'current')">Working Part Time</button>
-            <button onclick="selectOption(this, 'current')">Working Full Time</button>
+        <div class="section">
+            <h5>I'M CURRENTLY...</h5>
+            <div class="options">
+                <button onclick="selectOption(this, 'current')">In School</button>
+                <button onclick="selectOption(this, 'current')">In College</button>
+                <button onclick="selectOption(this, 'current')">In Uni</button>
+                <button onclick="selectOption(this, 'current')">In training</button>
+                <button onclick="selectOption(this, 'current')">Working Part Time</button>
+                <button onclick="selectOption(this, 'current')">Working Full Time</button>
+            </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h4>MY HOBBIES AND INTERESTS ARE...</h4>
-        <div class="options">
-            <button onclick="selectOption(this, 'hobbies')"><span>&#127918;</span> Gaming</button>
-            <button onclick="selectOption(this, 'hobbies')"><span>&#9917;</span> Sport</button>
-            <button onclick="selectOption(this, 'hobbies')"><span>&#127925;</span> Music</button>
+        <div class="section">
+            <h5>MY HOBBIES AND INTERESTS ARE...</h5>
+            <div class="options">
+                <button onclick="selectOption(this, 'hobbies')"><span>&#127918;</span> Gaming</button>
+                <button onclick="selectOption(this, 'hobbies')"><span>&#9917;</span> Sport</button>
+                <button onclick="selectOption(this, 'hobbies')"><span>&#127925;</span> Music</button>
+            </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h4>MY FUTURE GOALS ARE...</h4>
-        <div class="options">
-            <button onclick="selectOption(this, 'goals')"><span>&#128176;</span> Big money</button>
-            <button onclick="selectOption(this, 'goals')"><span>&#128188;</span> Job for life</button>
-            <button onclick="selectOption(this, 'goals')"><span>&#128218;</span> Keep learning</button>
-            <button onclick="selectOption(this, 'goals')"><span>&#127968;</span> Own a business</button>
+        <div class="section">
+            <h5>MY FUTURE GOALS ARE...</h5>
+            <div class="options">
+                <button onclick="selectOption(this, 'goals')"><span>&#128176;</span> Big money</button>
+                <button onclick="selectOption(this, 'goals')"><span>&#128188;</span> Job for life</button>
+                <button onclick="selectOption(this, 'goals')"><span>&#128218;</span> Keep learning</button>
+                <button onclick="selectOption(this, 'goals')"><span>&#127968;</span> Own a business</button>
+            </div>
         </div>
-    </div>
-    <a href="summativeAssessment.html">
-        <button type="button" id="nextButton"> Proceed to test your skills </button>
-    </a>
+        <a href="summativeAssessment.html">
+            <button type="button" id="nextButton"> Proceed to test your skills </button>
+        </a>
 
-</div>
+    </div>
 
     <!-- Bootstrap's Javascript elements -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -156,29 +155,26 @@
         }
     </script>
 </body>
-  <!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
+<!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
 <footer>
-<p>© 2024 by Power Rangers | <a href="powerranger@cardiff.ac.uk">powerranger@cardiff.ac.uk</a></p>
+    <p>© 2024 by Power Rangers | <a href="powerranger@cardiff.ac.uk">powerranger@cardiff.ac.uk</a></p>
 
-<ul class="socials">
-    <li>
-        <a href="https://youtube.com" target="_blank"><img src="../assets/icon-logo-youtube.png"
-                alt="Youtube"></a>
-    </li>
-    <li>
-        <a href="https://twitter.com" target="_blank"><img src="../assets/icon-logo-twitter.png"
-                alt="Twitter"></a>
-    </li>
-    <li>
-        <a href="https://instagram.com" target="_blank"><img src="../assets/icon-logo-instagram.png"
-                alt="My Instagram"></a>
-    </li>
-    <li>
-        <a href="https://git.cardiff.ac.uk/c23002705/mifutures-power-rangers" target="_blank"><img
-                src="../assets/gitlab.png" alt="My Gitlab"></a>
-    </li>
-</ul>
+    <ul class="socials">
+        <li>
+            <a href="https://youtube.com" target="_blank"><img src="../assets/icon-logo-youtube.png" alt="Youtube"></a>
+        </li>
+        <li>
+            <a href="https://twitter.com" target="_blank"><img src="../assets/icon-logo-twitter.png" alt="Twitter"></a>
+        </li>
+        <li>
+            <a href="https://instagram.com" target="_blank"><img src="../assets/icon-logo-instagram.png"
+                    alt="My Instagram"></a>
+        </li>
+        <li>
+            <a href="https://git.cardiff.ac.uk/c23002705/mifutures-power-rangers" target="_blank"><img
+                    src="../assets/gitlab.png" alt="My Gitlab"></a>
+        </li>
+    </ul>
 </footer>
+
 </html>
-
-
