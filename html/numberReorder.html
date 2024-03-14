@@ -172,13 +172,15 @@
     const checkWin = () => {
       const sortedNumbers = [...Array(totalNumbers).keys()].map(i => i + 1).concat([null]);
       if (numbers.every((value, index) => value === sortedNumbers[index])) {
-        alert('Congratulations! You have reordered the numbers correctly.');
+        localStorage.setItem("format", "numberReorder");
+        localStorage.setItem("l1", JSON.parse(localStorage.getItem("l1")) + 1);
+        setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
         resetGame();
       }
     };
 
     const resetGame = () => {
-      const confirmed = confirm('Would you like to play again?');
+      const confirmed = false;
       if (confirmed) {
         numbers = generateNumbers(sideLength);
         printBoard();
@@ -193,6 +195,7 @@
       document.addEventListener('keydown', handleKeydown);
       document.addEventListener('keydown', (e) => {
         if (e.key.toLowerCase() === 'q') {
+          checkWin();
           alert('Quitting the game.');
         }
       });

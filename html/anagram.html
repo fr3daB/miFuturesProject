@@ -164,8 +164,17 @@
                     if (guessInput === originalWord) {
                         if(tries == 1){
                             document.getElementById("result").innerText = "SUCCESS! SOLVED IN " + (tries ) + " TRY!";
+                            localStorage.setItem("format", "anagram");
+                            localStorage.setItem("tries", tries);
+                            localStorage.setItem("l1", JSON.parse(localStorage.getItem("l1")) + 1);
+                            setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
                         }else{
-                        document.getElementById("result").innerText = "SUCCESS! SOLVED IN " + (tries ) + " TRIES!";
+                            document.getElementById("result").innerText = "SUCCESS! SOLVED IN " + (tries ) + " TRIES!";
+                            document.getElementById("result").innerText = "SUCCESS! SOLVED IN " + (tries ) + " TRY!";
+                            localStorage.setItem("format", "anagram");
+                            localStorage.setItem("tries", tries);
+                            localStorage.setItem("l1", JSON.parse(localStorage.getItem("l1")) + 1);
+                            setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
                         }
                     } else if(tries == 3){
                         document.getElementById("result").innerHTML = "Incorrect guess. Try again!<br><strong>" + shuffledWord + "</strong> HINT: The first letter is " + originalWord[0];                        tries++;
