@@ -1,163 +1,211 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <link rel="import" href="navbar.html">
-                <!-- These are some basics meta and because I am using bootstrap, it requires boostrap's css and js to be included. This is in the layout because all pages are going to inherit it. -->
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-                    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-            
-                <!-- linking to google fonts -->
-                <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-                
-                <link rel="stylesheet" href="../css/skillPage.css">
-                <script src="../js/level.js"></script>
-        <title>Problem Soliving</title>
-    </head>
 
-    <body onload="start()">
-        <!--NAV BAR -->
-        <!-- Standard bootstrap template various elements such as dropdown menu, colors and positioning combined to produce desired nav bar.  -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-steel fixed-top" data-bs-theme="dark" style="background-color: black;">
-            <div class="container-fluid">
-              <a class="navbar-brand" style="font-weight: bolder;" href="#"> <!-- This is where the logo goes.-->
-                <h5>SKILLS BURST</h5>
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<head>
+    <link rel="import" href="navbar.html">
+    <!-- These are some basics meta and because I am using bootstrap, it requires boostrap's css and js to be included. This is in the layout because all pages are going to inherit it. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- linking to google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/skillPage.css">
+    <script src="../js/level.js"></script>
+    <title>Problem Soliving</title>
+</head>
+
+<body onload="start()">
+    <!--NAV BAR -->
+    <!-- Standard bootstrap template various elements such as dropdown menu, colors and positioning combined to produce desired nav bar.  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-steel fixed-top" data-bs-theme="dark"
+        style="background-color: black;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-weight: bolder;" href="#">
+                <!-- This is where the logo goes.-->
+                <img src="../assets/output-onlinepngtools.png" alt="logo"
+                    style="width: 50px; height: 50px; margin-left: 32px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #f843f8; font-weight: bold;" href="dashboard.html">Dashboard</a>
+                        <a class="nav-link" style="color: #f843f8; font-weight: bold;"
+                            href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color: #f843f8; font-weight: bold;" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: #f843f8; font-weight: bold;" href="#">Diagnostic Test</a>
+                        <a class="nav-link" style="color: #f843f8; font-weight: bold;"
+                            href="generalinterest.html">Diagnostic
+                            Test</a>
                     </li>
                     <!-- Dropdown menu, standrd templated obtained from boostrap, used css to modify colours. pretty standard-->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" style="color: #f843f8; font-weight: bold;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" style="color: #f843f8; font-weight: bold;" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Skills
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Problem Solving</a></li>
-                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Skill 1</a></li>
-                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Skill 2</a></li>
+                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Problem
+                                    Solving</a></li>
+                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Skill 1</a>
+                            </li>
+                            <li><a class="dropdown-item" style="color: #0ef1a4; font-weight: bold;" href="#">Skill 2</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
                 <!-- right side buttons where the ms-auto pushes it to the other end.-->
                 <ul class="navbar-nav ms-auto">
                     <!-- this checks if the user is logged then we wont to display the username and logout button -->
-                        <!-- wanted to use the nav link, the # doesn't load anywhere but inherits the navlink styling. -->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: #0ef1a4; font-weight: bold;" href="#">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: #0ef1a4; font-weight: bold;" href="#">Register</a>
-                        </li>
-                    
+                    <!-- wanted to use the nav link, the # doesn't load anywhere but inherits the navlink styling. -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #0ef1a4; font-weight: bold;" href="#">Welcome,
+                            Gemma</a>
+                    </li>
+
                 </ul>
-              </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <!-- Bootstrap's Javascript elements -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-        
-        <header style="margin-top: 5%;">
-            <h2>Problem Solving</h2>
-            <div class="progress-bar" style="width: 40%; margin: auto;">
-                <div  id="lebar" class="filler" style="width: 5%;"></div>
+    <!-- Bootstrap's Javascript elements -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <header style="margin-top: 5%;">
+        <h2>Problem Solving</h2>
+        <div class="progress-bar" style="width: 40%; margin: auto;">
+            <div id="lebar" class="filler" style="width: 5%;"></div>
+        </div>
+    </header>
+
+    <main>
+        <div id="levels">
+            <div id="circle-container">
+                <div class="l">
+                    <h5 style="padding-top: 15px;text-align: center; position: relative;">Time Management</h5>
+                    <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
+                        <div class="progress"></div>
+                        <div class="progressEnd"></div>
+                        <div class="counter"><img src="../assets/dice_icon.png" alt="Dice"> </div>
+                    </div>
+                    <button class="start-btn"
+                        style="text-align: center; position: relative; top: 35px; left: calc(50% - 40px);"
+                        onclick="select1()">Start</button>
+
+                </div>
+                <div class="line-diag-l"></div>
+                <div class="line-diag-r"></div>
             </div>
-        </header>
-    
-        <main>  
-            <div id="levels">
-                <div id="circle-container">
-                    <div class="l">
-                        <h5 style="padding-top: 15px;text-align: center; position: relative;">Time Management</h5>
-                        <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
-                            <div class="progress"></div>
-                            <div class="progressEnd"></div>
-                            <div class="counter"><img src="../assets/dice_icon.png" alt="Dice"> </div>
-                        </div>
-                        <button class="start-btn" style="text-align: center; position: relative; top: 35px; left: calc(50% - 40px);" onclick="select1()">Start</button>
 
+
+            <div id="circle-container">
+                <div class="l">
+                    <h5 style="padding-top: 15px;text-align: center; position: relative;">Creativity</h5>
+                    <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
+                        <div class="progress"></div>
+                        <div class="progressEnd"></div>
+                        <div class="counter"><img src="../assets/padlock.png" alt="Dice"> </div>
                     </div>
-                    <div class="line-diag-l"></div>
-                    <div class="line-diag-r"></div>
+                    <button class="start-btn"
+                        style="text-align: center; position: relative; top: 35px; left: calc(50% - 45px);"
+                        onclick="select1()">Locked</button>
+                    <div class="line-straight" style=" left:25%"></div>
                 </div>
 
-
-                <div id="circle-container">
-                    <div class="l">
-                        <h5 style="padding-top: 15px;text-align: center; position: relative;">Creativity</h5>
-                        <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
-                            <div class="progress"></div>
-                            <div class="progressEnd"></div>
-                            <div class="counter"><img src="../assets/padlock.png" alt="Dice"> </div>
-                        </div>
-                        <button class="start-btn" style="text-align: center; position: relative; top: 35px; left: calc(50% - 45px);" onclick="select1()">Locked</button>
-                        <div class="line-straight" style=" left:25%"></div>
-                    </div>
-
-                    <div class="l">
-                        <h5 style="padding-top: 15px;text-align: center; position: relative;">Communication</h5>
-                        <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
-                            <div class="progress"></div>
-                            <div class="progressEnd"></div>
-                            <div class="counter"><img src="../assets/padlock.png" alt="Dice"> </div>
-                        </div>
-                        <button class="start-btn" style="text-align: center; position: relative; top: 35px; left: calc(50% - 45px);" onclick="select1()">Locked</button>
-                        <div class="line-straight" style=" left:75%"></div>
-                    </div>
-                    
-                </div>
-
-                <div id="circle-container">
-                    <div class="l">
-                        <h5 style="padding-top: 15px;text-align: center; position: relative;">Creativity</h5>
-                        <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
-                            <div class="progress"></div>
-                            <div class="progressEnd"></div>
-                            <div class="counter"><img src="../assets/padlock.png" alt="Dice"> </div>
-                        </div>
-                        <button class="start-btn" style="text-align: center; position: relative; top: 35px; left: calc(50% - 45px);" onclick="select1()">Locked</button>
-                    </div>
-
-                    <div class="l">
-                        <h5 style="padding-top: 15px;text-align: center; position: relative;">Communication</h5>
-                        <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
-                            <div class="progress"></div>
-                            <div class="progressEnd"></div>
-                            <div class="counter"><img src="../assets/padlock.png" alt="Dice"> </div>
-                        </div>
-                        <button class="start-btn" style="text-align: center; position: relative; top: 35px; left: calc(50% - 45px);" onclick="select1()">Locked</button>
-                    </div>
-                    <div class="line-diag-l" style="transform: rotateY(0deg) rotate(-35deg);"></div>
-                    <div class="line-diag-r" style="transform: rotateY(0deg) rotate(35deg);"></div>
-                </div>
-                
-                <div class="l" style="margin-top: 40px;">
+                <div class="l">
                     <h5 style="padding-top: 15px;text-align: center; position: relative;">Communication</h5>
                     <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
                         <div class="progress"></div>
                         <div class="progressEnd"></div>
                         <div class="counter"><img src="../assets/padlock.png" alt="Dice"> </div>
                     </div>
-                    <button class="start-btn" style="text-align: center; position: relative; top: 35px; left: calc(50% - 45px);" onclick="select1()">Locked</button>
+                    <button class="start-btn"
+                        style="text-align: center; position: relative; top: 35px; left: calc(50% - 45px);"
+                        onclick="select1()">Locked</button>
+                    <div class="line-straight" style=" left:75%"></div>
                 </div>
-            </div>
-        </main>
 
-    </body>
-   
+            </div>
+
+            <div id="circle-container">
+                <div class="l">
+                    <h5 style="padding-top: 15px;text-align: center; position: relative;">Creativity</h5>
+                    <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
+                        <div class="progress"></div>
+                        <div class="progressEnd"></div>
+                        <div class="counter"><img src="../assets/padlock.png" alt="Dice"> </div>
+                    </div>
+                    <button class="start-btn"
+                        style="text-align: center; position: relative; top: 35px; left: calc(50% - 45px);"
+                        onclick="select1()">Locked</button>
+                </div>
+
+                <div class="l">
+                    <h5 style="padding-top: 15px;text-align: center; position: relative;">Communication</h5>
+                    <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
+                        <div class="progress"></div>
+                        <div class="progressEnd"></div>
+                        <div class="counter"><img src="../assets/padlock.png" alt="Dice"> </div>
+                    </div>
+                    <button class="start-btn"
+                        style="text-align: center; position: relative; top: 35px; left: calc(50% - 45px);"
+                        onclick="select1()">Locked</button>
+                </div>
+                <div class="line-diag-l" style="transform: rotateY(0deg) rotate(-35deg);"></div>
+                <div class="line-diag-r" style="transform: rotateY(0deg) rotate(35deg);"></div>
+            </div>
+
+            <div class="l" style="margin-top: 40px;">
+                <h5 style="padding-top: 15px;text-align: center; position: relative;">Communication</h5>
+                <div onclick="select1()" style="top: 15px; position: relative;" id="c1" class="circlePercent">
+                    <div class="progress"></div>
+                    <div class="progressEnd"></div>
+                    <div class="counter"><img src="../assets/padlock.png" alt="Dice"> </div>
+                </div>
+                <button class="start-btn"
+                    style="text-align: center; position: relative; top: 35px; left: calc(50% - 45px);"
+                    onclick="select1()">Locked</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+<!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
+<footer>
+    <p>© 2024 by Power Rangers | <a href="powerranger@cardiff.ac.uk">powerranger@cardiff.ac.uk</a></p>
+
+    <ul class="socials">
+        <li>
+            <a href="https://youtube.com" target="_blank"><img src="../assets/icon-logo-youtube.png" alt="Youtube"></a>
+        </li>
+        <li>
+            <a href="https://twitter.com" target="_blank"><img src="../assets/icon-logo-twitter.png" alt="Twitter"></a>
+        </li>
+        <li>
+            <a href="https://instagram.com" target="_blank"><img src="../assets/icon-logo-instagram.png"
+                    alt="My Instagram"></a>
+        </li>
+        <li>
+            <a href="https://git.cardiff.ac.uk/c23002705/mifutures-power-rangers" target="_blank"><img
+                    src="../assets/gitlab.png" alt="My Gitlab"></a>
+        </li>
+    </ul>
+</footer>
+
 </html>
