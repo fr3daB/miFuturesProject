@@ -37,8 +37,6 @@ def anagram(word_list):
 
 easywords = ["river", "table", "happy", "guitar", "movie"]
 mediumwords = ["elephant", "computer", "library", "pancake", "journey"]
-intermediatewords = [
-    "persevere", "ethereal", "enigma", "quagmire", "insidious"]
+intermediatewords = ["persevere", "ethereal", "enigma", "quagmire", "insidious"]
 hardwords = ["serendipity", "exquisite", "cacophany", "mellifluos", "quixotic"]
 
-#anagram(easywords)
