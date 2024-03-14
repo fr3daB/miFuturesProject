@@ -15,7 +15,8 @@
             margin: 0 auto;
             text-align: center;
             margin-top: 150px;
-           
+            display: flex; /* Make the game container a flex container */
+            justify-content: space-between; /* Arrange the elements with space between them */
         }
         h1 {
             font-family: 'Baron Neue', sans-serif;
@@ -24,8 +25,8 @@
             font-family: 'Open Sans', sans-serif; /* Applying Open Sans font to body */
         }
         #start-button, #guess-button {
-        border-radius: 20px;
-        background-color: black;
+            border-radius: 20px;
+            background-color: black;
         }
         form {
             max-width: 400px;
@@ -43,6 +44,13 @@
             color: #fff;
             border: none;
             cursor: pointer;
+        }
+        #reason-box {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: auto; /* Enable vertical scrolling if content exceeds box height */
         }
     </style>
 </head>
@@ -90,28 +98,27 @@
       </nav>
       <p> </p>
 
-    
     <div id="game-container">
-        <h1>Anagram Solver</h1>
-        <label for="level-select">Select Level:</label>
-        <select id="level-select">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-            <option value="extreme">Extreme</option>
-        </select>
-        <button id="start-button" style="color: white;">Start Game</button>
-        <div id="result-container">
-            <p id="result"></p>
+        <div id="anagram-container">
+            <h1>Anagram Solver</h1>
+            <label for="level-select">Select Level:</label>
+            <select id="level-select">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="extreme">Extreme</option>
+            </select>
+            <button id="start-button" style="color: white;">Start Game</button>
+            <div id="result-container">
+                <p id="result"></p>
+            </div>
+            <div id="guess-container">
+                <input type="text" id="guess-input" maxlength="30" placeholder="Enter your guess">
+                <button id="guess-button" style="color: white;">Guess</button>
+            </div>
         </div>
-    
-        <div id="guess-container">
-            <input type="text" id="guess-input" maxlength="30" placeholder="Enter your guess">
-            <button id="guess-button" style="color: white;">Guess</button>
-        </div>
+        <div id="reason-box"></div> <!-- Box for displaying random reason -->
     </div>
-
-    
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -141,6 +148,7 @@
                     var wordIndex = Math.floor(Math.random() * wordList.length);
                     var originalWord = wordList[wordIndex];
                     checkWord(originalWord);
+                    displayRandomReason();
                 } else {
                     console.error("Invalid level selected.");
                 }
@@ -177,6 +185,19 @@
             } else {
                 console.error("Guess button not found.");
             }
+        }
+
+        // Function to display a random reason in the box
+        function displayRandomReason() {
+            var reasons = [
+            "You know those games where you keep trying and trying until you get it right? That’s all about persistence and resilience—never giving up, no matter what! This is a very important problem solving skill! ",
+            "Think of it this way: Businesses need problem solvers like never before. They're the ones who can tackle tough situations and find smart solutions. That's why it's such a big deal for employers.",
+            "Being able to bounce back from setbacks and keep pushing forward is like having a secret weapon for success. It’s what helps you tackle any challenge with a smile! ",
+             ];
+
+            var randomIndex = Math.floor(Math.random() * reasons.length);
+            var randomReason = reasons[randomIndex];
+            document.getElementById("reason-box").innerText = randomReason;
         }
 
         // Function to shuffle a string
