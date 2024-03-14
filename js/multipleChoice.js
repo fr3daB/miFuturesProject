@@ -58,7 +58,7 @@ const popupClose = document.getElementById('popup-close');
 const progressFill = document.getElementById('progress-fill');
 const timerDisplay = document.getElementById('timer-display');
 
-const quizDuration = 1 * 60; // 5 minutes in seconds
+const quizDuration = 1; // 5 minutes in seconds
 let quizTimer;
 const timerEnabled = true; // Change to false to disable the timer
 
@@ -118,7 +118,7 @@ function startTimer() {
             setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
         }
 
-        timeRemaining--;
+        timeRemaining++;
     }, 1000);
 }
 
