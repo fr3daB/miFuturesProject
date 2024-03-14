@@ -20,8 +20,12 @@ header {
 
 #levels {
     margin: auto auto;
-    width: 50%;
+    width: 100%;
     padding: 10px;
+}
+
+.l {
+  width: 260px; height: 230px; border-radius: 25px; border-width: 2px; background: #f0f0f0; margin: auto;
 }
 
 #circle-container {
@@ -45,6 +49,39 @@ body {
     margin-top: 5%;
     top: 0;
     left: 0;
+}
+
+.start-btn {
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.unlock-btn {
+  background-color: #00b894;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #00b8938f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .navbar-why-you-so-small > .navbar-collapse {
@@ -91,7 +128,7 @@ body {
     top: 80%;
     left: calc(50% - 1px);
     width: 2px;
-    height: 80px;
+    height: 120px;
     background-color: black;
     z-index: -1;
   }
@@ -101,7 +138,7 @@ body {
     top: 75%;
     left: calc(37.5% - 1px);
     width: 2px;
-    height: 100px;
+    height: 200px;
     background-color: black;
     transform: rotateY(0deg) rotate(35deg);
     z-index: -1;
@@ -112,7 +149,7 @@ body {
     top: 75%;
     left: calc(62.5% + 1px);
     width: 2px;
-    height: 100px;
+    height: 200px;
     background-color: black;
     transform: rotateY(0deg) rotate(-35deg);
     z-index: -1;
