@@ -61,7 +61,7 @@
 <body>
   <div class="container">
     <h1>Register</h1>
-    <form>
+    <form id="registerform" action="generalinterest.html" method="post">
       <input type="text" placeholder="Username" required>
       <input type="email" placeholder="Email" required>
       <input type="password" placeholder="Password" required>
@@ -70,5 +70,12 @@
       <a href="login.html" style="color: #0ef1a4; text-decoration: none;">Login</a>
     </form>
   </div>
+  <script>
+    document.getElementById("registerform").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+      // Redirect to dashboard.html
+      window.location.href = this.action;
+    });
+  </script>
 </body>
 </html>
