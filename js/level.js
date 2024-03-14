@@ -27,7 +27,6 @@ function start() {
   document.getElementById('lebar').style.width = `${localStorage.getItem("l1percent")/document.getElementById('lebar').style.width}px`;
 }
 
-
 function select1() {
   var l = localStorage.getItem('l1');
   console.log(l);
