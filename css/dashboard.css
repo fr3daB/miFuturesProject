@@ -266,6 +266,7 @@ footer a:hover {
 
   .skill-header p {
     font-size: 14px;
+    margin-right: 30px;
   }
   
   .skill-progress {
@@ -301,7 +302,8 @@ footer a:hover {
     position: relative;
     bottom: 0;
     padding: 0.5rem 1rem;
-    background-color: #333;
+    background-color: rgb(41, 45, 44);
+    opacity: 0.8;
     color: #fff;
     font-size: 15px;
     border-radius: 0.25rem;
@@ -315,16 +317,26 @@ footer a:hover {
 
   /* Opportunity */
   .btn {
-    background: rgb(14, 241, 164);
+    background: rgb(41, 45, 44);
+    /* background: rgb(14, 241, 164);; */
+    opacity: 0.8;
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     display: inline-block;
     padding: 7px;
     letter-spacing: .1em;
     line-height: 1;
     border-radius: 16px;
+}
+
+.btn:hover {
+    /* background: #444; */
+    background: #0dc475;
+    opacity: 1.2;
+    color: white;
+    text-decoration: none;
 }
 
 .opprtunity p{
@@ -333,12 +345,16 @@ footer a:hover {
 .opprtunity h5{
   font-size: 16px;
   margin-bottom: 2px;
+  font-weight: bold;
 }
 .opprtunity-item{
-    margin: 10px 0;
+    margin: 15px 0;
+    background-color: #f5f5f5;
+    border-radius: 0.25rem;
+    padding: 10px;
 }
 .opprtunity-item img{
-    height: auto;
+    height: 105px;
     width: 150px;
 }
 .opprtunity-item .btn{
@@ -421,6 +437,8 @@ footer a:hover {
   width: 100%;
   padding: 0.5rem;
   border-bottom: 1px solid #ccc;
+  background-color: #f5f5f5;
+  border-radius: 0.25rem;
 }
 
 #achievement li:last-child {

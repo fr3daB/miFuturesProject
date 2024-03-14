@@ -1,16 +1,16 @@
 const questionData1 = [
     {
-        question: "Coronavirus disease (COVID-19) is an infectious disease caused by a new virus.",
+        question: "Solving a jigsaw puzzle involves recognizing patterns and shapes, which can enhance cognitive abilities.",
         answer: true,
         image: "../assets/padlock.png"
     },
     {
-        question: "The Earth is flat.",
-        answer: false,
+        question: "True/False: Solving a jigsaw puzzle involves recognizing patterns and shapes, which can enhance cognitive abilities.",
+        answer: true,
         image: "../assets/dice_icon.png"
     },
     {
-        question: "Apples are a type of fruit.",
+        question: "Progressing through levels of a maze involves problem-solving and can improve spatial awareness.",
         answer: true,
         image: "../assets/gitlab.png"
     }
@@ -18,18 +18,18 @@ const questionData1 = [
 
 const questionData2 = [
     {
-        question: "Harder Question???",
+        question: "Solving a crossword puzzle requires vocabulary and word association skills, which can be developed over time.",
         answer: true,
         image: "../assets/padlock.png"
     },
     {
-        question: "The Earth is flat.",
-        answer: false,
+        question: "Learning to solve a complex magic square involves understanding number patterns and can enhance mathematical skills.",
+        answer: true,
         image: "../assets/dice_icon.png"
     },
     {
-        question: "Apples are a type of fruit.",
-        answer: true,
+        question: "Solving a maze always follows a linear path without any alternate routes.",
+        answer: false,
         image: "../assets/gitlab.png"
     }
 ];
@@ -58,7 +58,7 @@ const popupClose = document.getElementById('popup-close');
 const progressFill = document.getElementById('progress-fill');
 const timerDisplay = document.getElementById('timer-display');
 
-const quizDuration = 1 * 60; // 5 minutes in seconds
+const quizDuration = 1; // 5 minutes in seconds
 let quizTimer;
 const timerEnabled = true; // Change to false to disable the timer
 
@@ -118,7 +118,7 @@ function startTimer() {
             setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
         }
 
-        timeRemaining--;
+        timeRemaining++;
     }, 1000);
 }
 

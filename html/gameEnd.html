@@ -77,6 +77,7 @@
                 <p>You have successfully completed the quiz/game.</p>
                 <p><span id="score">X/Y</span></p>
                 <p>Great job! Keep up the good work!</p>
+                <p>You Unlocked some new opportunities!! Visit the dashboard to check them out.</p>
                 <button onclick="window.location='../html/skillPage.html'" class="play-again-btn">Continue</button>
             </div>
         </div>
@@ -89,11 +90,11 @@
             switch (format) {
                 case "memory":
                     var score = JSON.parse(localStorage.getItem("moves"));
-                    scoreSpan.textContent = `Congratulations! You won in ${score + 1} moves.`;
+                    scoreSpan.textContent = `You won in ${score + 1} moves.`;
                     break;
                 case "multiple":
                     var score = localStorage.getItem("score"); 
-                    scoreSpan.textContent = `Congratulations! You acheived ${score[0]}/${score[2]}`;
+                    scoreSpan.textContent = `You acheived ${score[0]}/${score[2]}`;
                     break;
             }
     

@@ -51,3 +51,7 @@ button span {
     font-weight: bold;
     background-color: #0ef1af;
 }
+button.selected {
+    background-color: #f843f2;
+    color: #fff;
+  }

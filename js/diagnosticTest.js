@@ -144,9 +144,4 @@ function getResult(){
     const resultDiv = document.getElementById("result-div")
     const percentDiv = document.getElementById("percent-div")
 
-
-    resultDiv.innerHTML = `<h2 id="score">Your score is ${score} out of 20</h2>`
-    
-    percentDiv.innerHTML = `<h2 id="score">You have ${percentage}% score</h2>`
-
 }
