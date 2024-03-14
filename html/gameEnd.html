@@ -74,8 +74,8 @@
         <div class="container">
             <div class="content">
                 <h1>Congratulations!</h1>
-                <p>You have successfully completed the quiz/game.</p>
-                <p><span id="score">X/Y</span></p>
+                <p>You have successfully completed the game.</p>
+                <p><span id="score"></span></p>
                 <p>Great job! Keep up the good work!</p>
                 <p>You Unlocked some new opportunities!! Visit the dashboard to check them out.</p>
                 <button onclick="window.location='../html/skillPage.html'" class="play-again-btn">Continue</button>
@@ -90,11 +90,22 @@
             switch (format) {
                 case "memory":
                     var score = JSON.parse(localStorage.getItem("moves"));
-                    scoreSpan.textContent = `Congratulations! You won in ${score + 1} moves.`;
+                    scoreSpan.textContent = `You won in ${score + 1} moves!`;
                     break;
                 case "multiple":
                     var score = localStorage.getItem("score"); 
-                    scoreSpan.textContent = `Congratulations! You acheived ${score[0]}/${score[2]}`;
+                    scoreSpan.textContent = `You acheived ${score[0]}/${score[2]}`;
+                    break;
+                case "anagram":
+                    var tries = localStorage.getItem('tries');
+                    if (tries == 1) {
+                        scoreSpan.textContent = `You won in ${tries} try!`;
+                    } else {
+                        scoreSpan.textContent = `You won in ${tries} tries!`;
+                    }
+                    break;
+                case "reorder":
+                    scoreSpan.textContent = `You have reordered the numbers correctly.`;
                     break;
             }
     
