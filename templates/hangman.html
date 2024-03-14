@@ -15,6 +15,14 @@
             margin-top: 150px;
             
         }
+        #reason-box {
+            width: 600px; /* Adjust this value to change the width */
+            height: 110px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: auto; /* Enable vertical scrolling if content exceeds box height */
+            margin: 0 auto;
+        }
         h1 {
             font-family: 'Baron Neue', sans-serif; 
         }
@@ -96,8 +104,11 @@
         <input type="text" id="guess-input" maxlength="1" placeholder="Enter a letter" style="font-family: 'Open Sans', sans-serif;">
         <button id="guess-button" style="color: white;">Guess</button>
         <p id="result"></p>
+        <div id="reason-box"></div>
     </div>
 
+    <div id="prompt-box">
+    </div>
     <!-- Bootstrap's JavaScript elements -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
@@ -107,14 +118,43 @@
         const mediumWords = ["computer", "keyboard", "programmer", "software", "algorithm"];
         const hardWords = ["cybersecurity", "encryption", "database", "network", "artificial"];
         const extremeWords = ["bioinformatics", "nanotechnology", "cryptography", "neuroscience", "astrophysics"];
+        const promptsList = [,
+        "Businesses need problem solvers like never before. They're the ones who can tackle tough situations and find smart solutions. That's why it's such a big deal for employers.",
+        "Did you know that recognising patterns isn't just for puzzles? Employers love it when you can see how things fit together in the workplace too!",
+        "Being able to bounce back from setbacks and keep pushing forward is like having a secret weapon for success. It’s what helps you tackle any challenge with a smile!"
+        ];
 
         let words = [];
+        let prompts = [];
         let wordToGuess = "";
         let guessedLetters = [];
         let attempts = 6;
 
+        displayRandomReason();
+
         function chooseWord() {
             return words[Math.floor(Math.random() * words.length)];
+        }
+
+        function choosePrompt(){
+            const pink = prompts[Math.floor(Math.random())]
+            return pink
+            print(pink)
+        }
+
+        function displayRandomReason() {
+            var reasons = [
+            "Imagine you're hiring for your company. You'd want people who can solve problems, right? Because in the future, every job will need someone who can figure things out and keep things moving.",
+            "Think of it this way: Businesses need problem solvers like never before. They're the ones who can tackle tough situations and find smart solutions. That's why it's such a big deal for employers.",
+            "Let's say you're running a company. You'd want employees who can handle whatever comes their way, right? That's why problem-solving skills are crucial for the future of work.",
+            "Picture this: You're in charge of hiring. You'd look for folks who can solve problems because, let's face it, every job has its challenges. Employers need problem solvers to keep things running smoothly.",
+            "Put yourself in the shoes of a business owner. You'd want a team that can handle any obstacle, right? That's why problem-solving is so important for the future of work.",
+            "Imagine you're building a team. You'd want people who can think on their feet and find solutions, wouldn't you? That's why problem-solving skills are in high demand for employers."
+            ];
+ 
+            var randomIndex = Math.floor(Math.random() * reasons.length);
+            var randomReason = reasons[randomIndex];
+            document.getElementById("reason-box").innerText = randomReason;
         }
 
         function displayWord() {
@@ -193,14 +233,26 @@
                     correctGuesses++;
                 }
             }
-
+            
             if (correctGuesses === wordToGuess.length) {
                 document.getElementById("result").textContent = "Congratulations! You guessed the word: " + wordToGuess;
-            } else if (attempts === 0) {
-                document.getElementById("result").textContent = "Sorry, you ran out of attempts. You can always try again. The correct word was: " + wordToGuess;
+                displayRandomPrompt();
             }
+
+            // Check if the game is lost
+            if (attempts === 0) {
+                document.getElementById("result").textContent = "Sorry, you ran out of attempts. You can always try again. The correct word was: " + wordToGuess;
+                displayRandomPrompt();
+            }
+
+            // Display the guessed letters
+            displayGuessedLetters();
         }
 
+        function displayGuessedLetters() {
+            const guessedLettersText = "Guessed Letters: " + guessedLetters.join(", ");
+            document.getElementById("guessed-letters").textContent = guessedLettersText;
+        }
 
         const hangmanImages = [
             " +---+\n     |\n     |\n     |\n    ===",
