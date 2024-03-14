@@ -1,8 +1,15 @@
 const board = document.getElementById('board');
 const message = document.getElementById('message');
-const continueBtn = document.getElementById('continue');
+const continueBtn = document.getElementById('restart');
+const movesSpan = document.getElementById('moves');
+const winScreen = document.getElementById('win-screen');
+const winMovesSpan = document.getElementById('win-moves');
 const cards = [];
-const symbols = ['🍎', '🍌', '🍒', '🍓', '🍕', '🍩', '🍭', '🥧'];
+const d1 = ['🍎', '🍌'];
+const d2 = ['🍎', '🍌', '🍒', '🍓', '🍕'];
+const d3 = ['🍎', '🍌', '🍒', '🍓', '🍕', '🍩'];
+const d4 = ['🍎', '🍌', '🍒', '🍓', '🍕', '🍩', '🍭', '🥧'];
+const symbols = d1;
 const flippedCards = [];
 let moves = 0;
 
@@ -24,7 +31,6 @@ function flipCard(card) {
         card.classList.add('flipped');
         card.textContent = card.dataset.symbol;
         flippedCards.push(card);
-        moves++;
     }
 
     if (flippedCards.length === 2) {
@@ -42,6 +48,7 @@ function flipCard(card) {
                 flippedCards.length = 0;
             }, 1000);
         }
+        movesSpan.textContent = ++moves;
     }
 }
 
@@ -49,9 +56,10 @@ function flipCard(card) {
 function checkWin() {
     const flippedCardCount = cards.filter(card => card.classList.contains('flipped')).length;
     if (flippedCardCount === cards.length) {
-        message.textContent = `Congratulations! You won in ${moves} moves.`;
+        message.textContent = `Congratulations! You won in ${moves + 1} moves.`;
         continueBtn.style.display = 'block';
         cards.forEach(card => card.removeEventListener('click', handleClick));
+        setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
     }
 }
 
@@ -65,5 +73,7 @@ cards.forEach(card => card.addEventListener('click', handleClick));
 // Continue button event listener
 continueBtn.addEventListener('click', () => {
     // Reset the game or continue to the next level
-    location.reload();
+    localStorage.setItem("format", "memory");
+    localStorage.setItem("moves", moves);
+    location.href='../html/gameEnd.html';
 });
