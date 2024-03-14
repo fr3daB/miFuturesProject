@@ -95,7 +95,6 @@
       <h1>Number Reorder Game</h1>
       <p>Reorder the numbers to form a square with the last number missing.</p>
       <p>Use the arrow keys or click on the numbers to swap them with the blank space.</p>
-      <p>Enter 'q' to quit.</p>
       <div id="game-board" class="grid"></div>
   </div>
   
@@ -196,7 +195,9 @@
       document.addEventListener('keydown', (e) => {
         if (e.key.toLowerCase() === 'q') {
           checkWin();
-          alert('Quitting the game.');
+          localStorage.setItem("format", "numberReorder");
+          localStorage.setItem("l1", JSON.parse(localStorage.getItem("l1")) + 1);
+          setTimeout(function() {location.href='../html/gameEnd.html';}, 555)
         }
       });
     };

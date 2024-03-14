@@ -20,14 +20,12 @@ const e = (elem, start, end) => {
 
 function start() {
   // Reset
-  console.log(localStorage.getItem("l1percent"));
   e(document.getElementById('c1'), 0, localStorage.getItem("l1percent"));
   document.getElementById('lebar').style.width = `${localStorage.getItem("l1percent")/document.getElementById('lebar').style.width}px`;
 }
 
 function select1() {
   var l = localStorage.getItem('l1');
-  console.log(l);
   switch (l) {
     case "1":
       localStorage.setItem("mc", 1);
@@ -49,7 +47,7 @@ function select1() {
       location.href = '../html/numberReorder.html';
       break;
     case "5":
-      localStorage.setItem("md", 1);
+      localStorage.setItem("md", 2);
       localStorage.setItem("l1percent", 62.5);
       location.href = '../html/memoryGame.html';
       break;
@@ -59,14 +57,14 @@ function select1() {
       location.href = '../html/anagram.html';
       break;
     case "7":
-      localStorage.setItem("mc", 2);
-      localStorage.setItem("l1percent", 87.5);
-      location.href = '../html/multipleChoice.html';
-      break;
-    case "8":
       localStorage.setItem("md", 3);
       localStorage.setItem("l1percent", 100);
       location.href = '../html/memoryGame.html';
+      break;
+    case "8":
+      localStorage.setItem("mc", 2);
+      localStorage.setItem("l1percent", 87.5);
+      location.href = '../html/multipleChoice.html';
         break;
     default:
       break;
